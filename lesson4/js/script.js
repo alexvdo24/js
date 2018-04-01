@@ -99,15 +99,18 @@ else {
 	alert("Ошибка");
 }
 arrItems = mainList.shopItems
-arrItems.unshift(0);
+
 arrItems.forEach(function(item, i, arrItems) {
 
-  console.log("У нас вы можете купить: " + item);
+  console.log("У нас вы можете купить: " + i + item);
 
 });
 
+let num = 0;
+
 for (let key in mainList.shopItems) {
-	console.log("В наличии есть "+mainList.shopItems[key]);
+	num++;
+	alert(num+ ". "+"В наличии есть " +mainList.shopItems[key]);
 }
 }
 

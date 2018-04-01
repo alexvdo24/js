@@ -37,7 +37,7 @@ for (let i = 0; i < 5; i++) {
 
 // 	else {
 //   i--;
-//   mainList.shopGoods[i] = a;
+// 
 // 	}
 // }
 
@@ -52,7 +52,7 @@ for (let i = 0; i < 5; i++) {
 // 	}
 // 	else {
 //   i--;
-//   mainList.shopGoods[i] = a;
+//  
 // 	}
 // }
 // while (i < 5);
