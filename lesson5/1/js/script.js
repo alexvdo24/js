@@ -3,7 +3,7 @@ let menu = document.getElementsByClassName('menu')[0];
 let menuItem = document.getElementsByClassName('menu-item');
 let div = document.createElement('div');
 let title = document.getElementById('title');
-
+let promptAnsw = document.getElementById('prompt');
 adv[0].remove();
 
 div.classList.add('menu-item');
@@ -13,8 +13,8 @@ menu.appendChild(div);
 title.innerHTML = "Мы продаём только подлинную технику Apple";
 
 
-answer = prompt("Псс, не хотите поговорить о Стиве Джобсе? Что думаете о техние Apple?");
-console.log(answer);
+let prm = prompt("Псс, не хотите поговорить о Стиве Джобсе? Что думаете о техние Apple?");
+promptAnsw.innerHTML = prm;
 
 let body = document.getElementsByTagName('body');
 console.log(body);
