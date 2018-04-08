@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="autor" content="">
+
+    <title>Шаблон!</title>
+	
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+  </head>
+
+
+<body>
+
+<input id="age" value="30">
+<script>
+  let age = document.getElementById('age');
+
+function showUser(surname, name, age) {
+ console.log("Пользователь " + surname + " " + name + ", его возраст " + this.value);
+}
+ 
+showUser.call(age, "Ivanov", "Ivan");
+
+</script>
+
+
+</body>
+</html>
