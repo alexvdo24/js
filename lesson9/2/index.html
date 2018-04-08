@@ -19,11 +19,12 @@
 <script>
   let age = document.getElementById('age');
 
-function showUser(surname, name, age) {
- console.log("Пользователь " + surname + " " + name + ", его возраст " + this.value);
+function showUser(surname, name) {
+ alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
 }
  
 showUser.call(age, "Ivanov", "Ivan");
+
 
 </script>
 
