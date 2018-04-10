@@ -90,7 +90,7 @@ morel[i].addEventListener('click', function () {
 
 close.addEventListener('click', function () {
 
-overlay.style.display = "none";
+overlay.style.display = "none"; 
 morel[0].classList.remove('more-splash');
 document.body.style.overflow = 'auto';
 
