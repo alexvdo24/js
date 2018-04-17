@@ -211,6 +211,7 @@ for (let i = 0; i < dot.length + 1; i++) {
 }
 });
 
+
 let persons = document.getElementsByClassName('counter-block-input')[0];
 let restDays = document.getElementsByClassName('counter-block-input')[1];
 let place = document.getElementById('select');
@@ -250,12 +251,13 @@ place.addEventListener('change', function() {
  if (restDays.value == '' || persons.value == '') {
   totalValue.innerHTML = 0;
  }
+
  else {
   let a = total;
-
   totalValue.innerHTML = a*this.options[this.selectedIndex].value;
  }
  
+
 });
 
 });
