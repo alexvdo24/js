@@ -1,53 +1,53 @@
 window.addEventListener('DOMContentLoaded', function() {
-	
-	let tab = document.getElementsByClassName('info-header-tab');
-	let tabContent = document.getElementsByClassName('info-tabcontent');
-	let info = document.getElementsByClassName('info-header')[0];
+  
+  let tab = document.getElementsByClassName('info-header-tab');
+  let tabContent = document.getElementsByClassName('info-tabcontent');
+  let info = document.getElementsByClassName('info-header')[0];
 
 
-	function hideTabContent(a) {
-		for (let i = a; i < tabContent.length; i++) {
-					tabContent[i].classList.remove('show');
-					tabContent[i].classList.add('hide');
-		}
-	}
+  function hideTabContent(a) {
+    for (let i = a; i < tabContent.length; i++) {
+          tabContent[i].classList.remove('show');
+          tabContent[i].classList.add('hide');
+    }
+  }
 hideTabContent(1);
 
 function showTabContent(b) {
-	if(tabContent[b].classList.contains('hide')) {
-		hideTabContent(0);
-		tabContent[b].classList.remove('hide');
-		tabContent[b].classList.add('show');
+  if(tabContent[b].classList.contains('hide')) {
+    hideTabContent(0);
+    tabContent[b].classList.remove('hide');
+    tabContent[b].classList.add('show');
 
-	}
+  }
 }
 
 info.addEventListener('click', function(event) {
-	let target = event.target;
-	if(target.className == 'info-header-tab') {
+  let target = event.target;
+  if(target.className == 'info-header-tab') {
    for (let i = 0; i < tab.length; i++) {
-   	if (target == tab[i]) {
-   		showTabContent(i);
-   		break;
-   	}
+    if (target == tab[i]) {
+      showTabContent(i);
+      break;
+    }
    }
-	}
+  }
 });
 
 //Timer
 let deadline = '2018-04-22';
 function getTimeRemaining(endtime) {
-	let t = Date.parse(endtime) - Date.parse(new Date());
+  let t = Date.parse(endtime) - Date.parse(new Date());
   seconds = Math.floor( (t/1000) % 60 ),
   minutes =  Math.floor( (t/1000/60) % 60),
   hours = Math.floor( (t/(1000*60*60)) );
 
-	return {
-		'total': t,
-		'hours': hours,
-		'minutes': minutes,
-		'seconds': seconds
-	};
+  return {
+    'total': t,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
 };
 
 function setClock(id, endtime) {
@@ -58,14 +58,14 @@ function setClock(id, endtime) {
    seconds = timer.querySelector('.seconds');
 
    function updateClock() {
-   	let t = getTimeRemaining(endtime);
-   	hours.innerHTML = t.hours;
-   	minutes.innerHTML = t.minutes;
-   	seconds.innerHTML = t.seconds;
+    let t = getTimeRemaining(endtime);
+    hours.innerHTML = t.hours;
+    minutes.innerHTML = t.minutes;
+    seconds.innerHTML = t.seconds;
 
-   	if (t.total <= 0) {
-   		clearInterval(timeInterval);
-   	}
+    if (t.total <= 0) {
+      clearInterval(timeInterval);
+    }
    };
 
    updateClock();
@@ -82,7 +82,7 @@ let close = document.querySelector('.popup-close');
 
 for (i=0; i<5; i++) {
 morel[i].addEventListener('click', function () {
-	 this.classList.add('more-splash');
+   this.classList.add('more-splash');
    overlay.style.display="block";
    document.body.style.overflow = 'hidden';
    i++;
@@ -211,7 +211,6 @@ for (let i = 0; i < dot.length + 1; i++) {
 }
 });
 
-
 let persons = document.getElementsByClassName('counter-block-input')[0];
 let restDays = document.getElementsByClassName('counter-block-input')[1];
 let place = document.getElementById('select');
@@ -226,7 +225,7 @@ persons.addEventListener('change', function() {
  personsSum = +this.value;
  total = (daysSum + personsSum)*4000;
  totalValue.innerHTML = total;
- if (restDays.value == '') {
+ if (restDays.value == '' || personsSum < 1) {
   totalValue.innerHTML = 0;
  }
  else {
@@ -239,7 +238,7 @@ daysSum = +this.value;
 total = (daysSum + personsSum)*4000;
 totalValue.innerHTML = total;
 
-if (persons.value == '') {
+if (persons.value == ''  || daysSum < 1) {
   totalValue.innerHTML = 0;
 }
 else {
@@ -251,14 +250,12 @@ place.addEventListener('change', function() {
  if (restDays.value == '' || persons.value == '') {
   totalValue.innerHTML = 0;
  }
-
  else {
   let a = total;
+
   totalValue.innerHTML = a*this.options[this.selectedIndex].value;
  }
  
-
 });
 
 });
-
